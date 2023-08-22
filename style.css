@@ -82,3 +82,121 @@
   height: fit-content;
   font-size: 1.2rem;
 }
+.generator {
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  min-width: 440px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.length {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+.length input {
+  flex: 0 1 2.4rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 1.8rem;
+  border: none;
+}
+.length-no:focus {
+  outline: none;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.5rem;
+  background-image: linear-gradient(
+    62deg,
+    #c3834f 0%,
+    #8ec5fc 50%,
+    #9d53b4 100%
+  );
+  background-color: transparent;
+  border-radius: 7px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+  background-color: #0742f3;
+  height: 2rem;
+  width: 1rem;
+  border-radius: 10px;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  background-color: #6d79e1;
+  box-shadow: 0 0 20px rgba(8, 118, 227, 0.932);
+  outline: 2px solid rgba(104, 60, 218, 0.932);
+}
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+}
+input[type="checkbox"] {
+  font-size: 1.3rem;
+  height: 20px;
+  width: 20px;
+  accent-color: #ffbbec;
+}
+.checklist div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.strength {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+.strength-light {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: rgb(155, 142, 142);
+  box-shadow: 0 0 10px rgb(114, 109, 109);
+}
+.generate-btn {
+  background-image: linear-gradient(
+    to right,
+    #b993d6 0%,
+    #8ca6db 51%,
+    #b993d6 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+.generate-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
