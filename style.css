@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+  background-color: #74ebd5;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
