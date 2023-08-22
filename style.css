@@ -216,6 +216,7 @@ input[type="checkbox"]:checked:hover {
   .wrapper {
     position: relative;
     font-size: 0.5rem;
+    height: calc(100vh - calc(100vh - 100%));
   }
   .container {
     gap: 1rem;
