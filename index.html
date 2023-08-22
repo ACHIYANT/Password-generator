@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="wrapper">
+        <div class="container">
+            <h1>Password Generator</h1>
+            <div class="password">
+                <input readonly placeholder="Password" type="text" name="" id="" passwordDisply>
+                <span class="absolute copied-text hidden">Copied</span>
+                <button class="absolute copy-btn">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </div>
+            <div class="generator">
+                <div class="length">
+                    <div class="pwd-length">Password Length</div>
+                    <input size="1" readonly class="length-no" type="text" required></input>
+                </div>
+                <div class="length-slider">
+                    <input type="range" name="" id="" min="4" max="20" lengthSlider>
+                </div>
+                <div class="checklist">
+                    <div class="upper">
+                        <input checked type="checkbox" name="" id="upperCase" class="check">
+                        <label for="upperCase">Include Uppercase Letters</label>
+                    </div>
+                    <div class="lower">
+                        <input type="checkbox" name="" id="lowerCase" class="check">
+                        <label for="lowerCase">Include Lowercase Letters</label>
+                    </div>
+                    <div class="numbers">
+                        <input type="checkbox" name="" id="number" class="check">
+                        <label for="number">Include Numbers</label>
+                    </div>
+                    <div class="symbols">
+                        <input type="checkbox" name="" id="symbols" class="check">
+                        <label for="symbols">Include Symbols</label>
+                    </div>
+                </div>
+                <div class="strength">
+                    <span>Strength</span>
+                    <div class="strength-light" strengthIndicator></div>
+                </div>
+                <div class="generate-btn">
+                    Generate Password
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
