@@ -39,3 +39,19 @@ function handleCheckBoxCount() {
 allCheckBoxes.forEach((checkBox) =>
   checkBox.addEventListener("click", handleCheckBoxCount)
 );
+function randomInteger(min, max) {
+  let num = Math.floor(Math.random() * (max - min)) + min;
+  return num;
+}
+function randomNumber() {
+  return randomInteger(0, 10);
+}
+function randomLowerCase() {
+  return String.fromCharCode(randomInteger(97, 123));
+}
+function randomUpperCase() {
+  return String.fromCharCode(randomInteger(65, 91));
+}
+function randomSymbol() {
+  return symbolString[randomInteger(0, symbolString.length)];
+}
