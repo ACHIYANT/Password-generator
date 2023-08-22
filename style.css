@@ -10,9 +10,8 @@
   background-color: #74ebd5;
   height: 100vh;
   width: 100vw;
-  top: 50%;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   user-select: none;
   -webkit-user-select: none;
@@ -22,6 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  /* margin-top: 100px; */
 }
 .container h1 {
   color: rgb(7, 8, 7);
@@ -216,12 +216,12 @@ input[type="checkbox"]:checked:hover {
   .wrapper {
     position: relative;
     font-size: 0.5rem;
-    transform: translateY(-50%);
   }
   .container {
     gap: 1rem;
     height: 400px;
     font-size: 1rem;
+    margin-top: 150px;
   }
   .generator {
     min-width: 350px;
@@ -230,5 +230,11 @@ input[type="checkbox"]:checked:hover {
   }
   .checklist {
     font-size: 1.5rem;
+  }
+  @media (min-width:800px) {
+    .wrapper{
+      align-items: center;
+    }
+    
   }
 }
