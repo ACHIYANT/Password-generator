@@ -230,11 +230,11 @@ input[type="checkbox"]:checked:hover {
   }
   .checklist {
     font-size: 1.5rem;
+  } 
+}
+@media (min-width:800px) {
+  .wrapper{
+    align-items: center;
   }
-  @media (min-width:800px) {
-    .wrapper{
-      align-items: center;
-    }
-    
-  }
+  
 }
