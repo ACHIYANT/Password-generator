@@ -55,3 +55,99 @@ function randomUpperCase() {
 function randomSymbol() {
   return symbolString[randomInteger(0, symbolString.length)];
 }
+
+function indicator(color) {
+  strengthIndicator.style.backgroundColor = color;
+  strengthIndicator.style.boxShadow = `0 0 15px ${color}`;
+}
+
+function strength() {
+  let hasUpper = upperCase.checked ? true : false;
+  let hasLower = lowerCase.checked ? true : false;
+  let hasNumber = number.checked ? true : false;
+  let hasSymbol = symbols.checked ? true : false;
+  console.log(hasUpper, hasLower, hasNumber, hasSymbol);
+
+  if (
+    hasUpper &&
+    hasLower &&
+    (hasNumber || hasSymbol) &&
+    password.length >= 8
+  ) {
+    indicator("green");
+  } else if (
+    (hasUpper || hasLower) &&
+    (hasNumber || hasSymbol) &&
+    password.length >= 6
+  ) {
+    indicator("yellow");
+  } else {
+    indicator("red");
+  }
+}
+
+function passwordShuffle(passwordArr) {
+  for (let i = passwordArr.length - 1; i > 0; i--) {
+    const rand = Math.floor(Math.random() * (i + 1));
+    console.log(rand);
+    const temp = passwordArr[i];
+    passwordArr[i] = passwordArr[rand];
+    passwordArr[rand] = temp;
+  }
+  console.log(passwordArr);
+  let str = "";
+  passwordArr.forEach((ele) => (str += ele));
+  return str;
+}
+
+function copyMsgVisible(message) {
+  copyText.innerText = message;
+  copyText.classList.add("visible");
+  setTimeout(() => copyText.classList.remove("visible"), 2000);
+}
+async function copyClipBoard() {
+  try {
+    await navigator.clipboard.writeText(passwordDisplay.value);
+    copyMsgVisible("Copied");
+  } catch (e) {
+    copyMsgVisible("Failed");
+  }
+}
+
+copyBtn.addEventListener("click", () => {
+  passwordDisplay.value ? copyClipBoard() : copyMsgVisible("Nothing to copy");
+});
+
+inputSlider.addEventListener("input", (e) => {
+  passwordLength = e.target.value;
+  handleSlider();
+});
+
+generateBtn.addEventListener("click", () => {
+  if (checkCount == 0) return;
+  password = "";
+
+  let funcArr = [];
+  if (upperCase.checked) {
+    funcArr.push(randomUpperCase);
+  }
+  if (lowerCase.checked) {
+    funcArr.push(randomLowerCase);
+  }
+  if (number.checked) {
+    funcArr.push(randomNumber);
+  }
+  if (symbols.checked) {
+    funcArr.push(randomSymbol);
+  }
+  for (let i = 0; i < funcArr.length; i++) {
+    password += funcArr[i]();
+  }
+  for (let i = checkCount; i < passwordLength; i++) {
+    let randomInd = randomInteger(0, funcArr.length);
+    password += funcArr[randomInd]();
+  }
+  password = passwordShuffle(Array.from(password));
+  passwordDisplay.value = password;
+  strength();
+});
